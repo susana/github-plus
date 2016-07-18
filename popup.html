@@ -11,6 +11,7 @@
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        width: 350px;
       }
       #status {
         /* avoid an excessively wide status text */
@@ -18,6 +19,9 @@
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 400px;
+      }
+      .plain-list {
+        list-style: none;
       }
     </style>
 
@@ -32,7 +36,35 @@
   <body>
     <div id="status"></div>
     <div>
-      <ul>
+      <form id="features-form">
+        <ul class="plain-list">
+          <li>
+            <label>
+              <input type="checkbox" value="ghp_enable_collapsible_files" id="ghp_enable_collapsible_files">
+              collapsible files
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="ghp_enable_sticky_file_list" id="ghp_enable_sticky_file_list">
+              sticky file list
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="ghp_enable_perma_expanded_file_list" id="ghp_enable_perma_expanded_file_list">
+              perma expanded file list
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="ghp_disable_whitespace_diffs" id="ghp_disable_whitespace_diffs">
+              whitespace diffs
+            </label>
+          </li>
+        </ul>
+      </form>
+      <!-- <ul>
         <li>
           (pr files) collapsible files
         </li>
@@ -51,7 +83,7 @@
         <li>
           (pr files) - X column highlighter
         </li>
-      </ul>
+      </ul> -->
     </div>
     <img id="image-result" hidden>
   </body>
