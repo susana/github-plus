@@ -14,7 +14,6 @@
   function createMenuListeners () {
     var features = featureEvents.keys;
     chrome.storage.sync.get(features, function(items) {
-      console.log(items);
       for (var item in items) {
         if (item in featureEvents && items[item] === true && featureEvents[item] !== null) {
           fn = featureEvents[item];

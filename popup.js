@@ -30,7 +30,6 @@
       var kv = {};
       kv[option] = isChecked;
       chrome.storage.sync.set(kv, function() {
-        // Notify that we saved.
         console.log("We just saved", option, isChecked);
       });
     }, false);

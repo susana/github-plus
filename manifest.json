@@ -13,13 +13,18 @@
   "permissions": [
     "storage",
     "activeTab",
-    "https://ajax.googleapis.com/"
+    "webRequest",
+    "webRequestBlocking",
+    "https://github.com/chartbeat/chartbeat/pull/*/files*"
   ],
   "content_scripts": [
    {
-     "matches": ["https://github.com/chartbeat/chartbeat/pull/*/files"],
+     "matches": ["https://github.com/chartbeat/chartbeat/pull/*/files*"],
      "css": ["pull_request_files.css"],
      "js": ["pull_request_files.js"]
    }
- ]
+ ],
+ "background": {
+    "scripts": ["background.js"]
+  }
 }
