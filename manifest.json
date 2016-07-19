@@ -15,16 +15,16 @@
     "activeTab",
     "webRequest",
     "webRequestBlocking",
-    "https://github.com/chartbeat/chartbeat/pull/*/files*"
+    "https://github.com/*/*/pull/*/files*"
   ],
   "content_scripts": [
    {
-     "matches": ["https://github.com/chartbeat/chartbeat/pull/*/files*"],
+     "matches": ["https://github.com/*/*/pull/*/files*"],
      "css": ["pull_request_files.css"],
      "js": ["pull_request_files.js"]
    },
   {
-    "matches": ["https://github.com/chartbeat/chartbeat/commits*"],
+    "matches": ["https://github.com/*/*/commits*"],
     "js": ["commits_list.js"]
   }
  ],
