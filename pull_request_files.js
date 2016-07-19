@@ -1,23 +1,19 @@
 (function(window, document) {
 
   var featureEvents = {
+    // "ghp_sticky_file_names": null,
+    // "ghp_disable_whitespace_diffs": null, // This is handled in background.js.
     "ghp_enable_collapsible_files": function () {
       var fileEls = getFileEls();
       enableCollapsibleFiles(fileEls);
-    },
-    // "ghp_sticky_file_names": null,
-    "ghp_disable_whitespace_diffs": null, // This is handled in background.js.
+    }
   };
   var fileLocations = {};
 
   function init() {
     var fileEls = getFileEls();
-    getFileLocations(fileEls);
-    createMenuListeners();
-  }
-
-  function createMenuListeners () {
     var features = featureEvents.keys;
+    getFileLocations(fileEls);
     chrome.storage.sync.get(features, function(items) {
       for (var item in items) {
         if (item in featureEvents && items[item] === true && featureEvents[item] !== null) {

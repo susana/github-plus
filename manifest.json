@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "GitHub Plus",
+  "description": "A chrome extension for selectively adding features to GitHub.",
   "version": "1.0",
 
   "browser_action": {
@@ -22,7 +22,11 @@
      "matches": ["https://github.com/chartbeat/chartbeat/pull/*/files*"],
      "css": ["pull_request_files.css"],
      "js": ["pull_request_files.js"]
-   }
+   },
+  {
+    "matches": ["https://github.com/chartbeat/chartbeat/commits*"],
+    "js": ["commits_list.js"]
+  }
  ],
  "background": {
     "scripts": ["background.js"]

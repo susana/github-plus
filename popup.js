@@ -1,9 +1,10 @@
 (function(document) {
 
   var featureIds = [
-    "ghp_enable_collapsible_files",
     // "ghp_sticky_file_names",
+    "ghp_enable_collapsible_files",
     "ghp_disable_whitespace_diffs",
+    "ghp_filter_commits_list"
   ];
 
   function init() {
@@ -22,16 +23,20 @@
   }
 
   function makeCheckboxCacheable(id) {
-    var checkboxEl = document.getElementById(id)
-    checkboxEl.addEventListener("click", function() {
-      var option = this.value;
-      var isChecked = this.checked;
-      var kv = {};
-      kv[option] = isChecked;
-      chrome.storage.sync.set(kv, function() {
-        console.log("We just saved", option, isChecked);
-      });
-    }, false);
+    var checkboxEl = document.getElementById(id);
+    if (checkboxEl) {
+      checkboxEl.addEventListener("click", function() {
+        var option = this.value;
+        var isChecked = this.checked;
+        var kv = {};
+        kv[option] = isChecked;
+        chrome.storage.sync.set(kv, function() {
+          console.log("We just saved", option, isChecked);
+        });
+      }, false);
+    } else {
+      console.log(id + " doesn't exist");
+    }
   }
 
   function initMenuInputValues(keys) {
