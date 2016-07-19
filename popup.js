@@ -2,8 +2,7 @@
 
   var featureIds = [
     "ghp_enable_collapsible_files",
-    "ghp_enable_sticky_file_list",
-    "ghp_enable_perma_expanded_file_list",
+    // "ghp_sticky_file_names",
     "ghp_disable_whitespace_diffs",
   ];
 

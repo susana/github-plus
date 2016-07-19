@@ -1,24 +1,12 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>Github Plus</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
         width: 350px;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
       }
       .plain-list {
         list-style: none;
@@ -34,57 +22,30 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status"></div>
     <div>
       <form id="features-form">
         <ul class="plain-list">
           <li>
             <label>
               <input type="checkbox" value="ghp_enable_collapsible_files" id="ghp_enable_collapsible_files">
-              collapsible files
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" value="ghp_enable_sticky_file_list" id="ghp_enable_sticky_file_list">
-              sticky file list
-            </label>
-          </li>
-          <li>
-            <label>
-              <input type="checkbox" value="ghp_enable_perma_expanded_file_list" id="ghp_enable_perma_expanded_file_list">
-              perma expanded file list
+              enable collapsible files
             </label>
           </li>
           <li>
             <label>
               <input type="checkbox" value="ghp_disable_whitespace_diffs" id="ghp_disable_whitespace_diffs">
-              whitespace diffs
+              disable whitespace diffs
             </label>
           </li>
         </ul>
       </form>
-      <!-- <ul>
-        <li>
-          (pr files) collapsible files
-        </li>
-        <li>
-          (pr files) sticky file list
-        </li>
-        <li>
-          (pr files) option - perma expanded file list
-        </li>
-        <li>
-          (repo pages) - shortcut links to your own PRs, those you're assigned to, those you have interacted with
-        </li>
-        <li>
-          (pr files) - enable/disable whitespace diffs
-        </li>
-        <li>
-          (pr files) - X column highlighter
-        </li>
-      </ul> -->
+      <!--
+        more features:
+        - file names displayed in the PR files sticky header as you scroll past files
+        - perma expanded file list
+        - shortcut links displayed somewhere, all the time, that link you to PRs you're assigned to, interacted with or created
+        - X column highlighter
+      -->
     </div>
-    <img id="image-result" hidden>
   </body>
 </html>
